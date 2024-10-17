@@ -1,0 +1,28 @@
+html {
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(0,0,0);
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+td, th {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+}
+
+th {
+  background-color: rgb(160, 160, 160);
+}
+
+td {
+  text-align: center;
+}
+
+caption {
+  font-weight: bold;
+  padding: 10px;
+}
