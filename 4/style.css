@@ -1,0 +1,61 @@
+h1
+{
+    color: red;
+}
+.main-title
+{
+    color: red;
+}
+a.link-green
+{
+    color: green;
+}
+a.special-link
+{
+    color: blue;
+}
+a.link-yellow
+{
+    color: yellow;
+}
+#first-post
+{
+    color: orange;
+}
+article.post
+{
+    color: purple;
+}
+.widget h3
+{
+    color: pink;
+}
+.color-list li 
+{
+    color: gray;
+}
+.color-list li:nth-child(2) 
+{
+    color: brown;
+}
+.color-list li.highlighted 
+{
+    color: black;
+}
+.important-widget h3 
+{
+    color: maroon;
+}
+.important-widget .note 
+{
+    color: maroon;
+}
+button.submit-btn 
+{
+    color: black;
+}
+input[placeholder="Белый"] 
+{
+    color: white;
+    background-color: darkgray;
+}
