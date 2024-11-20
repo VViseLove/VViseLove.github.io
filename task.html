@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Positioning Task</title>
+    <style>
+        body
+        {
+            background-color: peachpuff;
+            text-wrap: wrap;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .box-static
+        {
+            display:flex;
+            flex-direction: row;
+            background-color: orange;
+            width: 10vw;
+            height: 10vw;
+            text-align: center;
+            align-items: center;
+            justify-content:center;
+            border: 3px;
+            margin: 2vw;
+            text-wrap: wrap;
+        }
+        .box-relative-1
+        {
+            display:block;
+            width: 10vw;
+            height: 10vw;
+            text-align: center;
+            line-height: 10vw;
+            position: relative;
+            top: 5vw;
+            left:5vw;
+            background-color: rgb(43, 124, 43);
+            border: 3px solid rgb(6, 183, 0);
+        }
+        .box-relative-2
+        {
+            display:block;
+            width: 10vw;
+            height: 10vw;
+            text-align: center;
+            line-height: 10vw;
+            position: relative;
+            top: 2vw;
+            left:8vw;
+            background-color: lightgreen;
+            border: 3px solid rgb(6, 183, 0);
+        }
+        .container
+        {
+            display: block;
+            width: 25vw;
+            height: 25vw;
+            text-align: center;
+            line-height: 10vw;
+            position:absolute;
+            left: 30vw;
+            top: 40vw;
+            background-color: rgb(255, 170, 95);
+        }
+        .box-absolute-1
+        {
+            position:absolute;
+            width: 10vw;
+            height: 10vw;
+            left: 3vw;
+            top: 3vw;
+            background-color: lightskyblue;
+            z-index: 3;
+        }
+        .box-absolute-2
+        {
+            position:absolute;
+            width: 10vw;
+            height: 10vw;
+            left: 5vw;
+            top: 5vw;
+            background-color: rgb(23, 133, 202);
+            z-index: 2;
+        }
+        .box-absolute-3
+        {
+            position:absolute;
+            width: 10vw;
+            height: 10vw;
+            left: 7vw;
+            top: 7vw;
+            background-color: rgb(0, 94, 152);
+            z-index: 1;
+        }
+        .box-zindex-1
+        {
+            position:absolute;
+            top: 15%;
+            left:70%;
+            width: 10vw;
+            height: 10vw;
+            background-color: rgb(241, 123, 241);
+            z-index: 1;
+            text-align: center;
+            line-height: 10vw;
+        }
+        .box-zindex-2
+        {
+            position:absolute;
+            top: 20%;
+            left:75%;
+            width: 10vw;
+            height: 10vw;
+            background-color: rgb(195, 97, 195);
+            z-index: 2;
+            text-align: center;
+            line-height: 10vw;
+        }
+        .box-fixed-1
+        {
+            width: 10vw;
+            height: 10vw;
+            display:block;
+            position:absolute;
+            top:0%;
+            left:90%;
+            background-color: rgb(209, 44, 44);
+            text-align: center;
+            line-height: 3vw;
+        }
+        .box-fixed-2
+        {
+            width: 10vw;
+            height: 10vw;
+            display:flexbox;
+            justify-content: start;
+            align-items: end;
+            background-color: rgb(209, 44, 44);
+            text-align: center;
+            line-height: 3vw;
+        }
+        @media only screen and (max-width: 600px) 
+        {
+            *
+            {
+                font-size: 0.8em; 
+            }
+        }
+        @media only screen and (min-width: 601px) 
+        {
+            * 
+            {
+                font-size: 1em; 
+            }   
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Static positioned boxes -->
+    <div class="box-static">Static</div>
+    <div class="box-static">Static</div>
+    
+    <!-- Relative positioned boxes -->
+    <div class="box-relative-1">Relative 1</div>
+    <div class="box-relative-2">Relative 2</div>
+
+    <!-- Container with absolute positioned boxes inside -->
+    <div class="container">
+        <div class="box-absolute-1">Absolute 1</div>
+        <div class="box-absolute-2">Absolute 2</div>
+        <div class="box-absolute-3">Absolute 3</div>
+    </div>
+
+    <!-- Overlapping boxes with z-index outside container -->
+    <div class="box-zindex-1">Z-Index 5</div>
+    <div class="box-zindex-2">Z-Index 4</div>
+
+    <!-- Fixed positioned boxes -->
+    <div class="box-fixed-1">Fixed Top-Right</div>
+    <div class="box-fixed-2">Fixed Bottom-Left</div>
+
+</body>
+
+</html>
