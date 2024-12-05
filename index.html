@@ -1,11 +1,369 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Script</title>
-  </head>
-  <body>
-    <h1>This is the example of a simple script usage</h1>
-  </body>
+    <title>Примеры работы функций</title>
+    <style>
+        body{
+          background-color: bisque;
+        }
+        .example {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: rgba(66, 241, 2, 0.836);
+        }
+        .example h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Примеры работы функций</h1>
+
+    <div class="example">
+        <h3>Сложение трёх чисел</h3>
+        <p id="sumThree"></p>
+    </div>
+    <div class="example">
+        <h3>Проверка на отрицательное число</h3>
+        <p id="isNegative"></p>
+    </div>
+    <div class="example">
+        <h3>Умножение чисел</h3>
+        <p id="multiply"></p>
+    </div>
+    <div class="example">
+        <h3>Определение целого числа</h3>
+        <p id="isInteger"></p>
+    </div>
+    <div class="example">
+        <h3>Подсчет процента</h3>
+        <p id="percentage"></p>
+    </div>
+    <div class="example">
+        <h3>Последний символ строки</h3>
+        <p id="lastChar"></p>
+    </div>
+    <div class="example">
+        <h3>Преобразование строки в нижний регистр</h3>
+        <p id="toLower"></p>
+    </div>
+    <div class="example">
+        <h3>Проверка вхождения подстроки</h3>
+        <p id="contains"></p>
+    </div>
+    <div class="example">
+        <h3>Удвоение строки</h3>
+        <p id="repeatTwice"></p>
+    </div>
+    <div class="example">
+        <h3>Удаление пробелов с начала и конца строки</h3>
+        <p id="trimSpaces"></p>
+    </div>
+    <div class="example">
+        <h3>Логическое "И НЕ"</h3>
+        <p id="andNot"></p>
+    </div>
+    <div class="example">
+        <h3>Проверка значения</h3>
+        <p id="isTrue"></p>
+    </div>
+    <div class="example">
+        <h3>Сравнение двух логических значений</h3>
+        <p id="isSame"></p>
+    </div>
+    <div class="example">
+        <h3>Логическое исключающее "ИЛИ"</h3>
+        <p id="xor"></p>
+    </div>
+    <div class="example">
+        <h3>Обратное значение</h3>
+        <p id="toggle"></p>
+    </div>
+    <div class="example">
+        <h3>Проверка существования свойства</h3>
+        <p id="hasKey"></p>
+    </div>
+    <div class="example">
+        <h3>Получение всех ключей объекта</h3>
+        <p id="getKeys"></p>
+    </div>
+    <div class="example">
+        <h3>Сравнение двух объектов</h3>
+        <p id="isEqual"></p>
+    </div>
+    <div class="example">
+        <h3>Удаление свойства из объекта</h3>
+        <p id="removeKey"></p>
+    </div>
+    <div class="example">
+        <h3>Проверка значения свойства</h3>
+        <p id="isValueEqual"></p>
+    </div>
+    <div class="example">
+        <h3>Создание массива из чисел</h3>
+        <p id="createArray"></p>
+    </div>
+    <div class="example">
+        <h3>Проверка элемента в массиве</h3>
+        <p id="containsArray"></p>
+    </div>
+    <div class="example">
+        <h3>Длина массива</h3>
+        <p id="getLength"></p>
+    </div>
+    <div class="example">
+        <h3>Добавление элемента в конец массива</h3>
+        <p id="addToEnd"></p>
+    </div>
+    <div class="example">
+        <h3>Получение последнего элемента массива</h3>
+        <p id="getLastElement"></p>
+    </div>
+    <div class="example">
+        <h3>Вывод всех элементов массива в консоль</h3>
+        <p>Откройте консоль для просмотра результата.</p>
+        <p id="logElements"></p>
+    </div>
+    <div class="example">
+        <h3>Сумма чисел массива</h3>
+        <p id="sumArray"></p>
+    </div>
+    <div class="example">
+        <h3>Преобразование строк в верхний регистр</h3>
+        <p>Результат в консоли</p>
+        <p id="toUpperCase"></p>
+    </div>
+    <div class="example">
+        <h3>Подсчёт количества отрицательных чисел</h3>
+        <p id="countNegatives"></p>
+    </div>
+    <div class="example">
+        <h3>Проверка чётных чисел</h3>
+        <p>Результат в консоли</p>
+        <p id="logEven"></p>
+    </div>
+    <div class="example">
+        <h3>Квадраты чисел</h3>
+        <p id="squareNumbers"></p>
+    </div>
+    <div class="example">
+        <h3>Удвоение элементов массива</h3>
+        <p id="doubleElements"></p>
+    </div>
+    <div class="example">
+        <h3>Извлечение первых букв строк</h3>
+        <p id="getFirstLetters"></p>
+    </div>
+    <div class="example">
+        <h3>Добавление префикса к строкам</h3>
+        <p id="addPrefix"></p>
+    </div>
+    <div class="example">
+        <h3>Приведение чисел к строкам</h3>
+        <p id="numbersToStrings"></p>
+    </div>
+
+    <script>
+        function sumThree(a, b, c) {
+            return a + b + c;
+        }
+        document.getElementById("sumThree").innerText = sumThree(1, 2, 3);
+
+        function isNegative(num) {
+            return num < 0;
+        }
+        document.getElementById("isNegative").innerText = isNegative(-5);
+
+        function multiply(a, b) {
+            return a * b;
+        }
+        document.getElementById("multiply").innerText = multiply(3, 4);
+
+        function isInteger(num) {
+            return Number.isInteger(num);
+        }
+        document.getElementById("isInteger").innerText = isInteger(4.5);
+
+        function percentage(total, percent) {
+            return (total * percent) / 100;
+        }
+        document.getElementById("percentage").innerText = percentage(200, 15);
+
+        function lastChar(str) {
+            return str.charAt(str.length - 1);
+        }
+        document.getElementById("lastChar").innerText = lastChar("Hello");
+
+        function toLower(str) {
+            return str.toLowerCase();
+        }
+        document.getElementById("toLower").innerText = toLower("КОТИК");
+
+        function contains(str, subStr) {
+            return str.includes(subStr);
+        }
+        document.getElementById("contains").innerText = contains("Котик", "Кот");
+
+        function repeatTwice(str) {
+            return str + str;
+        }
+        document.getElementById("repeatTwice").innerText = repeatTwice("АУУУУ");
+
+        function trimSpaces(str) {
+            return str.trim();
+        }
+        document.getElementById("trimSpaces").innerText = trimSpaces("  Абрэж мянеее!  ");
+
+        function andNot(a, b) {
+            return a && !b;
+        }
+        document.getElementById("andNot").innerText = andNot(true, false);
+
+        function isTrue(value) {
+            return value === true;
+        }
+        document.getElementById("isTrue").innerText = isTrue(true);
+
+        function isSame(a, b) {
+            return a === b;
+        }
+        document.getElementById("isSame").innerText = isSame(true, false);
+
+        function xor(a, b) {
+            return !!(a ^ b);
+        }
+        document.getElementById("xor").innerText = xor(true, false);
+
+        function toggle(value) {
+            return !value;
+        }
+        document.getElementById("toggle").innerText = toggle(true);
+
+        function hasKey(obj, key) {
+            return obj.hasOwnProperty(key);
+        }
+        document.getElementById("hasKey").innerText = hasKey({ a: "meow", b: "kiskis" }, "a");
+
+        function getKeys(obj) {
+            return Object.keys(obj).join(", ");
+        }
+        document.getElementById("getKeys").innerText = getKeys({ a: "meow", b: "kiskis", c: "woof" });
+
+        function isEqual(obj1, obj2) {
+            return JSON.stringify(obj1) === JSON.stringify(obj2);
+        }
+        document.getElementById("isEqual").innerText = isEqual({ a: "meow", b: "kiskis" }, { a: "meow", b: "kiskis" });
+
+        function removeKey(obj, key) {
+            delete obj[key];
+            return obj;
+        }
+        document.getElementById("removeKey").innerText = JSON.stringify(removeKey({ a: "meow", b: "kiskis" }, "b"));
+
+        function isValueEqual(obj, key, value) {
+            return obj[key] === value;
+        }
+        document.getElementById("isValueEqual").innerText = isValueEqual({ a: "meow", b: "kiskis" }, "b", 2);
+
+        function createArray(start, end) {
+            let array = [];
+            for (let i = start; i <= end; i++) {
+                array.push(i);
+            }
+            return array;
+        }
+        document.getElementById("createArray").innerText = createArray(1, 5).join(", ");
+
+        function contains(array, element) {
+            return array.includes(element);
+        }
+        document.getElementById("containsArray").innerText = contains([1, 2, 3, 4, 5], 3);
+
+        function getLength(array) {
+            return array.length;
+        }
+        document.getElementById("getLength").innerText = getLength([1, 2, 3, 4, 5]);
+
+        function addToEnd(array, element) {
+            array.push(element);
+            return array;
+        }
+        document.getElementById("addToEnd").innerText = addToEnd([1, 2, 3], 4).join(", ");
+
+        function getLastElement(array) {
+            return array[array.length - 1];
+        }
+        document.getElementById("getLastElement").innerText = getLastElement([1, 2, 3, 4, 5]);
+
+        function logElements(array) {
+            array.forEach(element => console.log(element));
+        }
+        logElements([101, 222, 330, 444, 555]);
+
+        function sumArray(array) {
+            let sum = 0;
+            array.forEach(element => {
+                sum += element;
+            });
+            return sum;
+        }
+        document.getElementById("sumArray").innerText = sumArray([1, 2, 3, 4, 5]);
+
+        function toUpperCase(array) {
+            array.forEach(element => {
+                if (typeof element === 'string') {
+                    console.log(element.toUpperCase());
+                }
+            });
+        }
+        toUpperCase(["я", "устал"]);
+
+        function countNegatives(array) {
+            let count = 0;
+            array.forEach(element => {
+                if (element < 0) {
+                    count++;
+                }
+            });
+            return count;
+        }
+        document.getElementById("countNegatives").innerText = countNegatives([-1, 2, -3, 4, -5]);
+
+        function logEven(array) {
+            array.forEach(element => {
+                if (element % 2 === 0) {
+                    console.log(element);
+                }
+            });
+        }
+        logEven([1, 2, 3, 4, 5, 6, 7, 8, 9, 111, 112, 777, 666]);
+
+        function squareNumbers(array) {
+            return array.map(num => num * num);
+        }
+        document.getElementById("squareNumbers").innerText = squareNumbers([1, 2, 3, 4, 5]).join(", ");
+
+        function doubleElements(array) {
+            return array.map(num => num * 2);
+        }
+        document.getElementById("doubleElements").innerText = doubleElements([1, 2, 3, 4, 5]).join(", ");
+
+        function getFirstLetters(array) {
+            return array.map(str => str.charAt(0));
+        }
+        document.getElementById("getFirstLetters").innerText = getFirstLetters(["apple", "banana", "cinnamon"]).join(", ");
+
+        function addPrefix(array, prefix) {
+            return array.map(str => prefix + str);
+        }
+        document.getElementById("addPrefix").innerText = addPrefix(["cat", "kotik"], "префикскскс_").join(", ");
+
+        function numbersToStrings(array) {
+            return array.map(num => num.toString());
+        }
+        document.getElementById("numbersToStrings").innerText = numbersToStrings([1, 2, 3, 4, 5]).join(", ");
+    </script>
+</body>
 </html>
