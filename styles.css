@@ -80,3 +80,7 @@ li button {
 li button:hover {
     background-color: #c9302c;
 }
+.filter-btn
+{
+    margin: 1.5%;
+}
