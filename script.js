@@ -6,7 +6,19 @@ async function task1() {
         }, 1000);
     });
 }
-
+async function tsk1()
+{
+    return new Promise(
+        resolve => 
+        {
+            setTimeout(()=>
+            {
+                console.log("Tsk1 completed successfully");
+                resolve();
+            },1000);
+        }
+    )
+}
 async function task2() {
     return new Promise(resolve => {
         setTimeout(() => {
@@ -33,75 +45,33 @@ async function runTasks() {
 
 runTasks();
 
-fetchPostTitles();
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => response.json())
-      .then(json => console.log(json))
+document.addEventListener('DOMContentLoaded', function () {
+    const fetchRatesButton = document.getElementById('fetch-rates');
+    const dateInput = document.getElementById('date');
+    
+    fetchRatesButton.addEventListener('click', function () {
+        const selectedDate = dateInput.value;
+        const url = `https://api.nbrb.by/exrates/rates?periodicity=0&ondate=${selectedDate}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('currency-table');
+                table.innerHTML = ''; // Очистка таблицы перед добавлением новых данных
+
+                data.forEach(rate => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${rate.Date}</td>
+                        <td>${rate.Cur_Abbreviation}</td>
+                        <td>${rate.Cur_Scale}</td>
+                        <td>${rate.Cur_OfficialRate}</td>
+                    `;
+                    table.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    });
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      // async function fetchExchangeRates() {
-//     const response = await fetch('https://belarusbank.by/api/kursExchange');
-//     const data = await response.json();
-//     const exchangeRatesElement = document.getElementById('exchange-rates');
-
-//     data.forEach(rate => {
-//         const li = document.createElement('li');
-//         li.textContent = `Currency: ${rate.Cur_Name}, Buy: ${rate.Cur_OfficialRate}`;
-//         exchangeRatesElement.appendChild(li);
-//     });
-// }
-
-// fetchExchangeRates();
-
-
-// async function fetchPostTitles() {
-//     const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-//     const posts = await response.json();
-//     const postTitlesElement = document.getElementById('post-titles');
-
-//     posts.forEach(post => {
-//         const li = document.createElement('li');
-//         li.textContent = post.title;
-//         postTitlesElement.appendChild(li);
-//     });
-// }

@@ -8,17 +8,23 @@
 </head>
 <body>
     <h1>Асинхронность основа (все)</h1>
-    <div id="content">
-        <div class="headers">
-            <h2>Курсы валют</h2>
-        </div>
-        <div class="content">
-            <ul id="exchange-rates"></ul>
-            <div id="informerBelarusbank"></div>
-            <script type="text/javascript" src="//belarusbank.by/informer?logotyp=1&ColorTextTitle=208d5a&ColorTextInformer=000000&ColorBackGround=85ff89&ColorTitleBackGround=58ff4d&ColorBorder=006030"></script>
-        </div>
-              
-    </div>
+    <label for="date">Дата:</label> 
+    <input type="date" id="date" name="date"> 
+    <button id="fetch-rates">Получить курсы валют</button> 
+    <table> 
+        <thead> 
+            <tr> 
+                <th>Дата</th> 
+                <th>Валюта</th> 
+                <th>Код</th> 
+                <th>Курс</th> 
+            </tr> 
+        </thead> 
+        <tbody id="currency-table"> 
+            <!-- Данные будут вставлены здесь через JavaScript --> 
+        </tbody> 
+    </table>
+            
     <script src="script.js"></script>
 </body>
 </html>
